@@ -21,3 +21,8 @@ print("World")
 #print data with their description using comments(#)
 print(50) # This line prints 50
 print("Hello World") # This line prints the Hello World
+
+#using docstring multi-line comment
+"""Using the docstring enable me to 
+write in diffent lines with a 
+single docstring"""
