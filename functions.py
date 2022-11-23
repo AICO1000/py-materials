@@ -36,3 +36,141 @@ print(minimum)
 2. User-defined functions
 print(), len() and min() are examples of built-in functions'''
 # Python allows us to create our own functions that perform tasks we require.
+# Function Creation - def function_name(parameters): body
+def print_function ():
+    print("This")
+    print("is")
+    print("A")
+    print("function")
+    
+print_function()
+print_function()    
+
+# Functions with parameters - meaning passing data into the functions.
+# The actual value/variable passed into the parameter are known arguments
+def minimum(first, second):
+    if (first < second):
+        print(first)
+    else:
+        print(second)
+        
+num1 = 10
+num2 = 20
+
+minimum(num1, num2)            
+
+# return statement
+def minimum(first,second):
+    if (first < second):
+        return first
+    return second
+
+num1 = 20
+num2 = 30
+result = minimum(num1, num2)
+
+print(result)
+
+'''It is a good practice to define all our functions first and then begin the main code. Defining them first ensures that they can be used anywhere in the program safely.'''
+
+# Function Scopes = Function body
+# Data Lifecycle - Data crated inside the function can not used outside on less it is begin return by the function.
+#example - below code will never code
+'''def func():
+    name = "Sam"
+func()
+print(name)    
+'''
+# Also function cannot access code outside it's scope except it is passed as an argument
+name = "Ned"
+
+def func():
+    name = "sam"
+    
+func()
+print(name)    # The value doesn't change
+
+'''When a mutable data is passed to a function the function can modify and edit it with the modifications staying effective outside the function scope, e.g. list.
+When an immutable data is passed to a function the function can modify and edit it without the modification not begining effective outside the function scope, e.g integers, strings. '''
+#immutable
+num = 20
+
+def multiply_by_10(n):
+    n *= 10
+    num = n
+    print("Value of num inside the function %i" % num)
+    return n
+
+multiply_by_10(num)
+print("Value of num outside the function", num)
+
+# mutable
+num_list = [10, 20, 30, 40]
+print(num_list)
+
+def multiply_by_10(my_list):
+    my_list[0] *= 10
+    my_list[1] *= 10
+    my_list[2] *= 10
+    my_list[3] *= 10
+    
+multiply_by_10(num_list)
+print(num_list)  
+
+# Built-in string function  
+# Functions that are properties of a particular entity are known as method. These methods can be accessed with the .opearator.
+# Search 
+# find()-a_string.find(substring, start, end), start and end are optional
+random_string = "This is a string"
+print(random_string.find("is"))
+print(random_string.find("is", 9, 13))
+
+# Replace() - can be used to replace a part of a string with another striing
+# a_string.replace(string_to_be_replaced, new_string)
+a_string = "Welcome to Deenation"
+print(a_string.replace("Welcome to", "Greetings from"))
+
+# Changing the letter case
+print("UpperCase".upper())
+print("LowerCase".lower())
+
+# Joining - with join() method we can join multiple strings together
+llist = ["a", "b", 'c']
+print('>>'.join(llist))
+print('<<'.join(llist))
+print(', '.join(llist))
+
+# Formatting - The format() can be used to format specified values and insert them in string's placeholders
+# The placeholders can be identified by a named indexed{cname}, numbered indexes{0}, or even an empty placeholder{}.
+string1 = "Learn Python {version} at {cname}".format(version = 3, cname = "Aicocademy")
+string2 = "Learn Python {0} at {1}".format(3, "Aicocademy")
+string3 = "Learn Python {} at {}".format(3, "Aicocademy")
+print(string1)
+print(string2)
+print(string3)
+
+'''Type conversion - In python sometimes we want to change data type of a data'''
+# int() - changes the data to an integer. strings can only be changed to an integer if it contents numbers
+print(int("20"))
+print(int(20.5))
+print(int(False))
+
+# ord() -  This function can be used to convert a character to its unicode
+print(ord('a'))
+print(ord('0'))
+
+# float() - The flaot() function translate data to a floating point number
+print(float(25))
+print(float("23.8"))
+print(float(True))
+
+# str() - To convert data into string
+print(str(20) + '2')
+print(str(False))
+print(str(12.789) + 'is a string')
+
+# bool
+print(bool(10))
+print(bool(0.0))
+print(bool("string"))
+print(bool(False))
