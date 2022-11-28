@@ -174,3 +174,87 @@ print(bool(10))
 print(bool(0.0))
 print(bool("string"))
 print(bool(False))
+
+# The input() function - takes users input
+# name = input("what is your name? ")
+# print("\nHello", name)
+
+'''lambdas - lambda
+We have to specify function names while creating them. However, there is some special functions where we don't need to specify the function names.
+Definition - A lamda is an anonymous function that returns some form of data'''
+# syntax - lambda parameters: expression - parameters are option 
+triple = lambda num : num * 3
+print(triple(10))
+
+string = lambda a, b, c : a[0] + b[0] + c[0]
+
+print(string("World", "Wide", "Web"))
+# A single line function for short function
+# for conditional statement
+temp = lambda num : 'high' if num > 10 else 'low'
+print(temp(5))
+print(temp(50)) 
+
+'''Functions as Argurment'''
+def add(n1, n2):
+    return n1 + n2
+def subtract(n1, n2):
+    return n1 - n2
+def multiply(n1, n2):
+    return n1 * n2
+def divide(n1, n2):
+    return n1 / n2
+def calculator(operation, n1, n2):
+    return operation(n1, n2)
+result = calculator(add, 10, 20)
+print(result)
+print(calculator(multiply, 10, 20))
+
+# Using lambdas
+def calculator(operatiion, n1, n2):
+    return operatiion(n1, n2)
+
+result = calculator(lambda n1, n2 : n1 + n2, 10, 20)
+print(result)
+
+print(calculator(lambda n1, n2 : n1 * n2, 10, 50))
+
+# map() - creates a map object from an existing list and a function as it's parameters. This object can be converted to a list by using the list() function
+# templates - map(function, list)
+num_list = [0,1,2,3,4,5]
+
+double_list = map(lambda n: n * 3, num_list)
+
+print(list(double_list))
+
+# filters() - requires a function and list - it filters elements that are in a list if the element satify the condition
+numList = [30, 2, -15, 17, 9, 100]
+
+greater_than_10 = list(filter(lambda n: n > 10, numList))
+
+print(greater_than_10)
+
+'''Recursion - is when a function calls itself during execution'''
+def rec_count(number):
+    print(number)
+    if number == 0:
+        return 0
+    rec_count(number - 1)
+    print(number)
+    
+rec_count(5) 
+'''Why use recursion
+1. Reduce runtime of certain algorithms
+2. Solves graph and trees related problem
+3. Important in search alorithms
+'''
+def fib(n):
+    if n <= 1:
+        return 0
+    elif n == 2:
+        return 1
+    else:
+        return fib(n-1) + fib(n-2)
+print(fib(6))    
+
+
