@@ -248,13 +248,25 @@ rec_count(5)
 2. Solves graph and trees related problem
 3. Important in search alorithms
 '''
-def fib(n):
-    if n <= 1:
-        return 0
-    elif n == 2:
+def fac(n):
+    if n < 0:
+        return -1
+    elif n == 0:
         return 1
     else:
-        return fib(n-1) + fib(n-2)
-print(fib(6))    
+        return n * fac(n -1)
+
+print(fac(5))
+
+# def factorial(n):
+#     # Base case
+#     if n == 0 or n == 1:
+#         return 1
+
+#     if n < 0:
+#         return -1
+#     # Recursive call
+#     return n * factorial(n - 1)
 
 
+# print(factorial(5))
