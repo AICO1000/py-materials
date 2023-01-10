@@ -37,7 +37,7 @@ print(minimum)
 print(), len() and min() are examples of built-in functions'''
 # Python allows us to create our own functions that perform tasks we require.
 # Function Creation - def function_name(parameters): body
-def print_function ():
+def print_function():
     print("This")
     print("is")
     print("A")
@@ -74,7 +74,7 @@ print(result)
 '''It is a good practice to define all our functions first and then begin the main code. Defining them first ensures that they can be used anywhere in the program safely.'''
 
 # Function Scopes = Function body
-# Data Lifecycle - Data crated inside the function can not used outside on less it is begin return by the function.
+# Data Lifecycle - Data created inside the function can not used outside on less it is begin return by the function.
 #example - below code will never code
 '''def func():
     name = "Sam"
