@@ -13,10 +13,12 @@ print(result)
 print(rep_cat(3, 4))'''
 
 def fac(n):
-    if n == 1:
-        return fac(n) * 1
+    if n < 0:
+       return -1
+    elif n == 0:
+        return 1
     else:
-        return fac(n) * fac(n -1)
+        return  n * fac(n - 1)      
     
-fac(4)    
+print(fac(5))       
         
